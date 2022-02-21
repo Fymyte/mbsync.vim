@@ -15,6 +15,6 @@ Plug 'Fymyte/mbsync.vim'
 ```lua
 use {
   'Fymyte/mbsync.vim',
-  ft = 'mbsyncrc',
+  ft = 'mbsync',
 }
 ```
