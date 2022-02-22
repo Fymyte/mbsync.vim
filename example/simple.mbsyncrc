@@ -1,0 +1,12 @@
+IMAPAccount account-name
+Host 10.0.0.1
+Port 993
+Inbox ~/Maildir
+AltMap yes
+
+MaildirStore store
+Host 10.0.0.1
+Port 993
+Inbox ~/Maildir
+AltMap yes
+
