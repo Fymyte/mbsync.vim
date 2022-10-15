@@ -36,7 +36,7 @@ syn match mbsGlobConfTrashNO  '^TrashNewOnly\s\+\ze.*$'   contains=mbsGlobConfIt
 syn match mbsGlobConfTrashRN  '^TrashRemoteNew\s\+\ze.*$' contains=mbsGlobConfItemK contained nextgroup=mbsBool transparent
 syn keyword mbsGlobConfItemK  Path MaxSize MapInbox Flatten Trash TrashNewOnly TrashRemoteNew contained
 
-syn cluster mbsGlobConfItem contains=mbsGlobConfPath,mbsGlobConfMaxSize,mbsGlobConfMapInbox,mbsGlobConfFlatten,mbsGlobConfTrash.*
+syn cluster mbsGlobConfItem contains=mbsGlobConfPath,mbsGlobConfMaxSize,mbsGlobConfMapInbox,mbsGlobConfFlatten,mbsCommentL,mbsGlobConfTrash.*
 
 
 "   MaildirStore
@@ -52,7 +52,7 @@ syn cluster mbsMdSConfItem contains=mbsMdSConfSt.*
 
 syn keyword mbsMdSConfItemK   MaildirStore AltMap Inbox InfoDelimiter SubFolders contained
 
-syn region mbsMaildirStore start="^MaildirStore" end="^$" end='\%$' contains=@mbsGlobConfItem,@mbsMdSConfItem,mbsError transparent
+syn region mbsMaildirStore start="^MaildirStore" end="^$" end='\%$' contains=@mbsGlobConfItem,mbsCommentL,@mbsMdSConfItem,mbsError transparent
 
 
 "   IMAP4Accounts
@@ -86,7 +86,7 @@ syn keyword mbsIAConfItemK
   \ AuthMechs SSLType SSLVersions SystemCertificates CertificateFile ClientCertificate
   \ ClientKey CipherString PipelineDepth DisableExtension[s] contained
 
-syn region mbsIMAP4AccontsStore start="^IMAPAccount" end="^$" end="\%$" contains=@mbsGlobConfItem,@mbsIAConfItem,mbsError transparent
+syn region mbsIMAP4AccontsStore start="^IMAPAccount" end="^$" end="\%$" contains=@mbsGlobConfItem,mbsCommentL,@mbsIAConfItem,mbsError transparent
 
 
 "   IMAPStores
@@ -100,7 +100,7 @@ syn cluster mbsISConfItem contains=mbsISConfSt.*
 
 syn keyword mbsISConfItemK  IMAPStore Account UseNamespace PathDelimiter SubscribedOnly contained
 
-syn region mbsIMAPStore start="^IMAPStore" end="^$" end="\%$" contains=@mbsGlobConfItem,@mbsISConfItem,mbsError transparent
+syn region mbsIMAPStore start="^IMAPStore" end="^$" end="\%$" contains=@mbsGlobConfItem,mbsCommentL,@mbsISConfItem,mbsError transparent
 
 " }}}
 
@@ -133,7 +133,7 @@ syn keyword mbsCConfItemK
   \ Channel Far Near Pattern[s] MaxSize MaxMessages ExpireUnread Sync Create
   \ Remove Expunge CopyArrivalDate SyncState contained
 
-syn region mbsChannel start="^Channel" end="^$" end="\%$" contains=@mbsCConfItem,mbsError transparent
+syn region mbsChannel start="^Channel" end="^$" end="\%$" contains=@mbsCConfItem,mbsCommentL,mbsError transparent
 
 " }}}
 
