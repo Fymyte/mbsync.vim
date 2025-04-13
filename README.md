@@ -1,3 +1,6 @@
+> [!WARNING]
+> Deprecated: support for mbsync filetype has been upstreamed in vim and neovim
+
 # mbsync.vim - mbsync config syntax highlighting for vim
 
 Add syntax highlighting support for mbsync config file
